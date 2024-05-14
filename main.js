@@ -1,3 +1,4 @@
+/*Creare l’array di oggetti con le informazioni fornite.*/
 const employe = [
 
     employe1 = {
