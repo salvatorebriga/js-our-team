@@ -40,9 +40,51 @@ const employe = [
 
 /*Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto*/
 
-for(let i = 0; i < employe.length; i++){
+/*for(let i = 0; i < employe.length; i++){
     console.log('%cMembro del Team numero: ' + (i + 1) , 'color: #FF0000');
     console.log('Nome: ' + employe[i].name);
     console.log('Ruolo: ' + employe[i].role);
     console.log('Link alla foto: ' + employe[i].image);
+}*/
+
+/*Stampare le stesse informazioni su DOM sottoforma di stringhe*/
+
+createCard(employe);
+
+function createCard(functionEmploye){
+
+    //const row = document.getElementById('row');
+    const row = document.querySelector('.row');
+
+    console.log(row);
+
+    for(let i = 0; i < employe.length; i++){
+
+        const col = document.createElement('div');
+        col.classList.add('col');
+
+        const card = document.createElement('div');
+        card.classList.add('card')
+
+        const image = document.createElement('p');
+        image.innerText = employe[i].image;
+
+        const name = document.createElement('h4');
+        name.innerText = employe[i].name;
+
+        const role = document.createElement('p');
+        role.innerText = employe[i].role;
+
+        card.appendChild(image);
+
+        card.appendChild(name);
+
+        card.appendChild(role);
+
+        col.appendChild(card);
+
+        row.appendChild(col);
+
+        console.log(row);
+    }
 }
